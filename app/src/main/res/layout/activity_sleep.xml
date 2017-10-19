@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <TextView
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="起床打卡规则："
+        android:textAppearance="@android:style/TextAppearance.Large"
+        />
+
+    <TextView
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="6:00-8:00期间打卡属于早起范畴\n8:00-12:00期间打卡属于晚起范畴\n12:00-23:00不属于起床打卡范畴"
+        android:textAppearance="@android:style/TextAppearance.Large"
+        />
+
+    <!--<View-->
+    <!--android:layout_marginTop="10dp"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="2dp"-->
+    <!--android:background="@color/blue" />-->
+    <TextView
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="睡前打卡规则："
+        android:textAppearance="@android:style/TextAppearance.Large"
+        />
+
+    <TextView
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="19:00-22:00期间打卡属于早睡范畴\n22:00-24:00期间打卡属于晚睡范畴\n24:00-6:00属于失眠打卡范畴"
+        android:textAppearance="@android:style/TextAppearance.Large"
+        />
+
+
+    <View
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/blue" />
+
+    <Button
+        android:layout_marginTop="20dp"
+        android:id="@+id/morning_clock"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="起床打卡"
+        android:layout_gravity="center_horizontal"
+        android:background="@color/blue"
+        android:onClick="morning_clock_btn"
+        android:textAppearance="@android:style/TextAppearance.Large"
+        />
+    <Button
+        android:layout_marginTop="10dp"
+        android:id="@+id/night_clock"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="睡前打卡"
+        android:layout_gravity="center_horizontal"
+        android:background="@color/blue"
+        android:onClick="night_clock_btn"
+        android:textAppearance="@android:style/TextAppearance.Large"
+        />
+    <Button
+        android:layout_marginTop="10dp"
+        android:id="@+id/sleep_result_query"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="统计结果查看"
+        android:layout_gravity="center_horizontal"
+        android:background="@color/blue"
+        android:onClick="sleep_result_query_btn"
+        android:textAppearance="@android:style/TextAppearance.Large"
+        />
+</LinearLayout>

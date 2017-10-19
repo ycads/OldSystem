@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:don="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.don.pieviewlibrary.AnimationPercentPieView
+        android:id="@+id/animation_pieView"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        don:centerTextSize="30dp"
+        don:circleWidth="80dp"
+        don:dataTextSize = "20dp"
+        />
+
+    <View
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/blue" />
+
+    <TextView
+        android:id="@+id/together_days"
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="打卡总天数："
+        android:textAppearance="@android:style/TextAppearance.Large"
+        />
+    <TextView
+        android:id="@+id/morning_days"
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="起床打卡："
+        android:textAppearance="@android:style/TextAppearance.Large"
+        />
+    <TextView
+        android:id="@+id/night_days"
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="睡前打卡："
+        android:textAppearance="@android:style/TextAppearance.Large"
+        />
+</LinearLayout>

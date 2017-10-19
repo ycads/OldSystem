@@ -1,0 +1,74 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/poision_btn"
+            android:layout_width="fill_parent"
+            android:layout_height="150dp"
+            android:layout_marginEnd="25dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="50dp"
+            android:layout_weight="1"
+            android:background="@mipmap/timg1"
+            android:text="\n实时定位\n"
+            android:textSize="20dp"/>
+
+        <Button
+            android:id="@+id/navigation_btn"
+            android:layout_width="fill_parent"
+            android:layout_height="150dp"
+            android:layout_marginEnd="25dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="50dp"
+            android:layout_weight="1"
+            android:background="@mipmap/timg1"
+            android:text="\n路线导航\n"
+            android:textSize="20dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/weather_btn"
+            android:layout_width="fill_parent"
+            android:layout_height="150dp"
+            android:layout_marginEnd="25dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="50dp"
+            android:layout_weight="1"
+            android:background="@mipmap/timg1"
+            android:text="天气查询"
+            android:textSize="20dp"/>
+
+        <Button
+            android:id="@+id/shake_btn"
+            android:layout_width="fill_parent"
+            android:layout_height="150dp"
+            android:layout_marginEnd="25dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="50dp"
+            android:layout_weight="1"
+            android:background="@mipmap/timg1"
+            android:text="开启摇一摇"
+            android:textSize="20dp"/>
+
+    </LinearLayout>
+
+
+</LinearLayout>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:text="摔倒识别结果："
+        android:textAppearance="@android:style/TextAppearance.Large" />
+
+    <TextView
+        android:id="@+id/fall_result"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="10dp"
+        android:text="------具体结果"
+        android:lines="5"
+        android:textAppearance="@android:style/TextAppearance.Large" />
+
+    <View
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/blue" />
+
+    <Button
+        android:layout_marginTop="20dp"
+        android:id="@+id/fall_telhelp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="一键电话求救"
+        android:layout_gravity="center_horizontal"
+        android:background="@color/blue"
+        android:onClick="fall_TelHelp"
+        android:textAppearance="@android:style/TextAppearance.Large"
+        />
+    <Button
+        android:layout_marginTop="10dp"
+        android:id="@+id/fall_smshelp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="一键短信求救"
+        android:layout_gravity="center_horizontal"
+        android:background="@color/blue"
+        android:onClick="fall_SmsHelp"
+        android:textAppearance="@android:style/TextAppearance.Large"
+        />
+    <Button
+        android:layout_marginTop="10dp"
+        android:id="@+id/notfall"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="确认未摔倒"
+        android:layout_gravity="center_horizontal"
+        android:background="@color/blue"
+        android:onClick="notFall"
+        android:textAppearance="@android:style/TextAppearance.Large"
+        />
+
+
+</LinearLayout>

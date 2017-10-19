@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/all_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="备忘录内容："
+        android:textAppearance="@android:style/TextAppearance.Large"
+        />
+    <EditText
+        android:id="@+id/info_memo_contant"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:lines="4"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:hint="请手动输入备忘录内容"
+        />
+
+    <!--<View-->
+    <!--android:layout_marginTop="10dp"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="2dp"-->
+    <!--android:background="@color/blue" />-->
+
+    <Button
+        android:layout_marginTop="10dp"
+        android:id="@+id/alarm_msg_save"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="保存"
+        android:layout_gravity="center_horizontal"
+        android:background="@color/blue"
+        android:onClick="memo_save"
+        android:textAppearance="@android:style/TextAppearance.Large"
+        />
+
+    <Button
+        android:layout_marginTop="10dp"
+        android:id="@+id/alarm_msg_search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="查看所有备忘信息"
+        android:layout_gravity="center_horizontal"
+        android:background="@color/blue"
+        android:onClick="memo_queryAll"
+        android:textAppearance="@android:style/TextAppearance.Large"
+        />
+
+    <TextView
+        android:id="@+id/date_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:gravity="center"
+        android:paddingBottom="8dp"
+        android:paddingTop="8dp"
+        android:text="请选择提醒时间"
+        android:textSize="20dp"
+        android:textColor="@color/colorAccent"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/blue"/>
+
+    <RelativeLayout
+        android:id="@+id/repeat_rl"
+        style="@style/item_style"
+        >
+
+        <TextView
+            android:id="@+id/tv_repeat"
+            style="@style/item_text_style"
+            android:layout_alignParentLeft="true"
+            android:text="重复"
+            android:textSize="20dp"/>
+
+        <TextView
+            android:id="@+id/arrow_one"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/personal_item_arrow"/>
+
+        <TextView
+            android:id="@+id/tv_repeat_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dp"
+            android:layout_toLeftOf="@id/arrow_one"
+            android:textColor="@color/black_33"
+            android:textSize="20sp"/>
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/blue"/>
+
+    <RelativeLayout
+        android:id="@+id/ring_rl"
+        style="@style/item_style"
+        >
+
+        <TextView
+            android:id="@+id/ring_tv"
+            style="@style/item_text_style"
+            android:layout_alignParentLeft="true"
+            android:text="铃声"
+            android:textSize="20dp"/>
+
+        <TextView
+            android:id="@+id/arrow_two"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/personal_item_arrow"/>
+
+        <TextView
+            android:id="@+id/tv_ring_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="5dp"
+            android:layout_toLeftOf="@id/arrow_two"
+            android:textColor="@color/black_33"
+            android:textSize="20sp"/>
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/blue"/>
+
+
+    <Button
+        android:id="@+id/set_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"
+        android:text="确定"
+        android:textSize="20dp"
+        android:background="@color/blue"/>
+</LinearLayout>

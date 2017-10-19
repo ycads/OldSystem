@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:weightSum="1">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.11"
+            android:text="  姓名："
+            android:textAppearance="@android:style/TextAppearance.Large" />
+        <EditText
+            android:id="@+id/personname"
+            android:layout_width="280dp"
+            android:layout_height="wrap_content"
+            android:focusable="true"
+            android:focusableInTouchMode="true" />
+    </LinearLayout>
+
+    <!--<View-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="2dp"-->
+    <!--android:background="@color/gray" />-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="1">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="  电话："
+            android:textAppearance="@android:style/TextAppearance.Large"
+            android:layout_weight="0.11" />
+        <EditText
+            android:id="@+id/persontel"
+            android:layout_width="280dp"
+            android:layout_height="wrap_content"
+            android:focusable="true"
+            android:focusableInTouchMode="true"/>
+    </LinearLayout>
+
+    <!--<View-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="2dp"-->
+    <!--android:background="@color/gray" />-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="1">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="  是否设置为紧急联系人："
+            android:textAppearance="@android:style/TextAppearance.Large"
+            android:layout_weight="0.11" />
+        <EditText
+            android:id="@+id/iscontact"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:hint="仅填是或否"
+            android:focusable="true"
+            android:focusableInTouchMode="true"/>
+    </LinearLayout>
+
+    <View
+        android:layout_marginTop="40dp"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/blue" />
+
+    <Button
+        android:layout_marginTop="10dp"
+        android:id="@+id/add_data"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="添加联系人"
+        android:background="@color/blue"
+        android:textAppearance="@android:style/TextAppearance.Large"
+        />
+
+    <Button
+        android:layout_marginTop="10dp"
+        android:id="@+id/update_data"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="修改联系人"
+        android:background="@color/blue"
+        android:textAppearance="@android:style/TextAppearance.Large"
+        />
+
+    <Button
+        android:layout_marginTop="10dp"
+        android:id="@+id/delete_data"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="删除联系人"
+        android:background="@color/blue"
+        android:textAppearance="@android:style/TextAppearance.Large"
+        />
+
+    <Button
+        android:layout_marginTop="10dp"
+        android:id="@+id/query_data"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="查询联系人"
+        android:background="@color/blue"
+        android:textAppearance="@android:style/TextAppearance.Large"
+        />
+
+    <Button
+        android:layout_marginTop="10dp"
+        android:id="@+id/query_alldata"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="查询所有联系人"
+        android:background="@color/blue"
+        android:textAppearance="@android:style/TextAppearance.Large"
+        />
+</LinearLayout>

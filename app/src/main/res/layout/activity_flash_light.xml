@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:gravity="center"
+    android:orientation="vertical" >
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        >
+
+        <TextView
+            android:id="@+id/show_status1"
+            android:layout_width="fill_parent"
+            android:layout_height="40dip"
+            android:layout_marginBottom="40dip"
+            android:gravity="center"
+            android:text="请点击按钮打开手电筒"
+            android:textAppearance="@android:style/TextAppearance.Large"
+            android:textSize="30dp" />
+
+        <ImageButton
+            android:id="@+id/light_Btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/hl_down"
+            />"
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,74 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/pedometer_btn"
+            android:layout_width="fill_parent"
+            android:layout_height="150dp"
+            android:layout_marginEnd="25dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="50dp"
+            android:layout_weight="1"
+            android:background="@mipmap/timg1"
+            android:text="计步器"
+            android:textSize="20dp"/>
+
+        <Button
+            android:id="@+id/memoire_btn"
+            android:layout_width="fill_parent"
+            android:layout_height="150dp"
+            android:layout_marginEnd="25dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="50dp"
+            android:layout_weight="1"
+            android:background="@mipmap/timg1"
+            android:text="备忘录"
+            android:textSize="20dp"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/sleep_btn"
+            android:layout_width="fill_parent"
+            android:layout_height="150dp"
+            android:layout_marginEnd="25dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="50dp"
+            android:layout_weight="1"
+            android:background="@mipmap/timg1"
+            android:text="睡眠监测"
+            android:textSize="20dp"/>
+
+        <Button
+            android:id="@+id/heart_rate_btn"
+            android:layout_width="fill_parent"
+            android:layout_height="150dp"
+            android:layout_marginEnd="25dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="50dp"
+            android:layout_weight="1"
+            android:background="@mipmap/timg1"
+            android:text="心率检测"
+            android:textSize="20dp"/>
+
+    </LinearLayout>
+
+
+</LinearLayout>

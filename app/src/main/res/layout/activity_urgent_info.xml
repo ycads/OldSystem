@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:weightSum="1">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.11"
+            android:text="联系人姓名："
+            android:textAppearance="@android:style/TextAppearance.Large" />
+        <EditText
+            android:id="@+id/urgentname"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:hint="填写要修改联系人姓名"
+            android:focusable="true"
+            android:focusableInTouchMode="true" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="1">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="联系人电话："
+            android:textAppearance="@android:style/TextAppearance.Large"
+            android:layout_weight="0.11" />
+        <EditText
+            android:id="@+id/urgenttel"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:hint="填写要修改联系人电话"
+            android:focusable="true"
+            android:focusableInTouchMode="true"/>
+    </LinearLayout>
+
+    <View
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/blue" />
+
+    <Button
+        android:layout_marginTop="10dp"
+        android:id="@+id/urgent_update"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="紧急联系人修改"
+        android:onClick="btn_urgentupdate"
+        android:background="@color/blue"
+        android:textAppearance="@android:style/TextAppearance.Large"
+        />
+
+    <View
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/blue" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="1">
+        <TextView
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="紧急联系人信息"
+            android:gravity="center"
+            android:textAppearance="@android:style/TextAppearance.Large"
+            android:textSize="30dp"
+            android:layout_weight="0.11" />
+
+    </LinearLayout>
+    <View
+        android:layout_marginTop="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/blue" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:weightSum="1">
+
+        <ScrollView
+            android:layout_marginTop="0dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/urgentText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="联系人信息"
+                android:textAppearance="@android:style/TextAppearance.Large" />
+        </ScrollView>
+
+    </LinearLayout>
+
+
+</LinearLayout>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+
+    <TextView
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="发送内容："
+        android:textAppearance="@android:style/TextAppearance.Large"
+        />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <EditText
+            android:id="@+id/info_location"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:lines="4"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:hint="点击获取定位信息按钮即可获取发送信息，并且还可以手动编辑添加相关信息"
+            />
+    </ScrollView>
+    <!--<View-->
+        <!--android:layout_marginTop="10dp"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="2dp"-->
+        <!--android:background="@color/blue" />-->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="接收人电话："
+        android:textAppearance="@android:style/TextAppearance.Large"
+        />
+
+        <EditText
+            android:id="@+id/sms_people"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="------接收人信息,点击获取接收人电话按钮即可查看"
+            android:lines = "4"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:textAppearance="@android:style/TextAppearance.Large" />
+    <View
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="@color/blue" />
+
+    <Button
+        android:layout_marginTop="20dp"
+        android:id="@+id/get_telpeople"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="获取接收人电话"
+        android:layout_gravity="center_horizontal"
+        android:background="@color/blue"
+        android:textAppearance="@android:style/TextAppearance.Large"
+        />
+    <Button
+        android:layout_marginTop="10dp"
+        android:id="@+id/get_location"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="获取定位信息"
+        android:layout_gravity="center_horizontal"
+        android:background="@color/blue"
+        android:textAppearance="@android:style/TextAppearance.Large"
+        />
+    <Button
+        android:layout_marginTop="10dp"
+        android:id="@+id/sendAll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="群发"
+        android:layout_gravity="center_horizontal"
+        android:background="@color/blue"
+        android:textAppearance="@android:style/TextAppearance.Large"
+        />
+</LinearLayout>

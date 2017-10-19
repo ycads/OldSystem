@@ -1,0 +1,48 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+
+    <TextView
+        android:id="@+id/tv"
+        android:layout_width="fill_parent"
+        android:layout_height="80dp"
+        android:hint="当前屏幕亮度为："
+        android:textAppearance="@android:style/TextAppearance.Large"
+        android:layout_marginTop="50dip"
+        android:textSize="30dp"
+        android:gravity="center_horizontal"
+        />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginTop="10dip"
+        android:layout_marginBottom="10dip"
+        >
+
+        <Button
+            android:id="@+id/button_add"
+            android:layout_width="fill_parent"
+            android:layout_height="180dp"
+            android:onClick="add"
+            android:background="@drawable/sc_high"
+            android:layout_weight="1"
+
+            />
+
+        <Button
+            android:id="@+id/button_reduce"
+            android:layout_width="fill_parent"
+            android:layout_height="180dp"
+            android:onClick="dre"
+            android:background="@drawable/sc_low"
+            android:layout_weight="1"
+
+            />
+    </LinearLayout>
+</LinearLayout>

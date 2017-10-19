@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">老年人便捷服务系统</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="tip">识别加速度值：</string>
+    <string name="report">摔倒识别说明：</string>
+    <string name="explain">------当沿屏幕向上方向上的加速度值大于10，且沿屏幕向外方向的加速度值大于6时，此时识别为人体摔倒。此时系统会自动跳转到选择求救页面。</string>
+
+    <string name="mon">周一</string>
+    <string name="tue">周二</string>
+    <string name="wed">周三</string>
+    <string name="thu">周四</string>
+    <string name="fri">周五</string>
+    <string name="sat">周六</string>
+    <string name="sun">周日</string>
+    <string name="cycle_sure">确定</string>
+    <string name="vibration">震动</string>
+    <string name="ring">铃声</string>
+</resources>
