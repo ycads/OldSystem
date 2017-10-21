@@ -10,7 +10,7 @@
 **2. 进入系统后，可以左右滑动，查看整体模块界面，分别是一键求救页面、位置服务页面、健康监测页面和智能工具页面。**
 
 ![15_](https://user-images.githubusercontent.com/18030737/31764001-8ea33a80-b4f2-11e7-9f0e-d187c5c65c69.jpg)
-![16_](https://user-images.githubusercontent.com/18030737/31764002-8ed52f5e-b4f2-11e7-9354-977957b1cbed.jpg)
+![29_](https://user-images.githubusercontent.com/18030737/31851559-b2c4f062-b69a-11e7-9f40-3832e2f3bb69.jpg)
 ![17_](https://user-images.githubusercontent.com/18030737/31764009-8f2e61b4-b4f2-11e7-8543-fe708ba20391.jpg)
 ![18_](https://user-images.githubusercontent.com/18030737/31764011-8f60bc54-b4f2-11e7-82a0-f3842c774209.jpg)
 
