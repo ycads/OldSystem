@@ -2,112 +2,243 @@ package com.liu.oldsystem.location;
 
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.Log;
 
 import com.baidu.mapapi.map.BaiduMap;
 import com.baidu.mapapi.map.BitmapDescriptor;
 import com.baidu.mapapi.map.BitmapDescriptorFactory;
 import com.baidu.mapapi.map.Marker;
 import com.baidu.mapapi.map.MarkerOptions;
+import com.baidu.mapapi.map.Overlay;
 import com.baidu.mapapi.map.OverlayOptions;
+import com.baidu.mapapi.map.Polyline;
 import com.baidu.mapapi.map.PolylineOptions;
 import com.baidu.mapapi.model.LatLng;
 import com.baidu.mapapi.search.route.DrivingRouteLine;
 import com.baidu.mapapi.search.route.DrivingRouteLine.DrivingStep;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
+/**
+ * 用于显示一条驾车路线的overlay，自3.4.0版本起可实例化多个添加在地图中显示，当数据中包含路况数据时，则默认使用路况纹理分段绘制
+ */
 public class DrivingRouteOverlay extends OverlayManager {
-    private DrivingRouteLine c = null;
 
-    public DrivingRouteOverlay(BaiduMap var1) {
-        super(var1);
+    private DrivingRouteLine mRouteLine = null;
+    boolean focus = false;
+
+    /**
+     * 构造函数
+     *
+     * @param baiduMap
+     *            该DrivingRouteOvelray引用的 BaiduMap
+     */
+    public DrivingRouteOverlay(BaiduMap baiduMap) {
+        super(baiduMap);
     }
 
+    @Override
     public final List<OverlayOptions> getOverlayOptions() {
-        if(this.c == null) {
+        if (mRouteLine == null) {
             return null;
-        } else {
-            ArrayList var1 = new ArrayList();
-            if(this.c.getAllStep() != null && this.c.getAllStep().size() > 0) {
-                new ArrayList();
-                Iterator var3 = this.c.getAllStep().iterator();
-
-                while(var3.hasNext()) {
-                    DrivingStep var4 = (DrivingStep)var3.next();
-                    Bundle var5 = new Bundle();
-                    var5.putInt("index", this.c.getAllStep().indexOf(var4));
-//                    if(var4.getEntrace() != null) {
-//                        var1.add((new MarkerOptions()).position(var4.getEntrace().getLocation()).anchor(0.5F, 0.5F).zIndex(10).rotate((float)(360 - var4.getDirection())).extraInfo(var5).icon(BitmapDescriptorFactory.fromAssetWithDpi("Icon_line_node.png")));
-//                    }
-
-                    if(this.c.getAllStep().indexOf(var4) == this.c.getAllStep().size() - 1 && var4.getExit() != null) {
-                        var1.add((new MarkerOptions()).position(var4.getExit().getLocation()).anchor(0.5F, 0.5F).zIndex(10).icon(BitmapDescriptorFactory.fromAssetWithDpi("Icon_line_node.png")));
-                    }
-                }
-            }
-
-            if(this.c.getStarting() != null) {
-                var1.add((new MarkerOptions()).position(this.c.getStarting().getLocation()).icon(this.getStartMarker() != null?this.getStartMarker(): BitmapDescriptorFactory.fromAssetWithDpi("Icon_start.png")).zIndex(10));
-            }
-
-            if(this.c.getTerminal() != null) {
-                var1.add((new MarkerOptions()).position(this.c.getTerminal().getLocation()).icon(this.getTerminalMarker() != null?this.getTerminalMarker(): BitmapDescriptorFactory.fromAssetWithDpi("Icon_end.png")).zIndex(10));
-            }
-
-            if(this.c.getAllStep() != null && this.c.getAllStep().size() > 0) {
-                LatLng var2 = null;
-                List var9 = this.c.getAllStep();
-                int var10 = var9.size();
-
-                for(int var11 = 0; var11 < var10; ++var11) {
-                    DrivingStep var6 = (DrivingStep)var9.get(var11);
-                    if(var6.getWayPoints() != null && var6.getWayPoints().size() > 0) {
-                        ArrayList var7 = new ArrayList();
-                        if(var2 != null) {
-                            var7.add(var2);
-                        }
-
-                        List var8 = var6.getWayPoints();
-                        var7.addAll(var8);
-                        var1.add((new PolylineOptions()).points(var7).width(10).color(Color.argb(178, 0, 78, 255)).zIndex(0));
-                        var2 = (LatLng)var8.get(var8.size() - 1);
-                    }
-                }
-            }
-
-            return var1;
         }
+
+        List<OverlayOptions> overlayOptionses = new ArrayList<OverlayOptions>();
+        // step node
+        if (mRouteLine.getAllStep() != null
+                && mRouteLine.getAllStep().size() > 0) {
+
+            for (DrivingRouteLine.DrivingStep step : mRouteLine.getAllStep()) {
+                Bundle b = new Bundle();
+                b.putInt("index", mRouteLine.getAllStep().indexOf(step));
+                if (step.getEntrance() != null) {
+                    overlayOptionses.add((new MarkerOptions())
+                            .position(step.getEntrance().getLocation())
+                            .anchor(0.5f, 0.5f)
+                            .zIndex(10)
+                            .rotate((360 - step.getDirection()))
+                            .extraInfo(b)
+                            .icon(BitmapDescriptorFactory
+                                    .fromAssetWithDpi("Icon_line_node.png")));
+                }
+                // 最后路段绘制出口点
+                if (mRouteLine.getAllStep().indexOf(step) == (mRouteLine
+                        .getAllStep().size() - 1) && step.getExit() != null) {
+                    overlayOptionses.add((new MarkerOptions())
+                            .position(step.getExit().getLocation())
+                            .anchor(0.5f, 0.5f)
+                            .zIndex(10)
+                            .icon(BitmapDescriptorFactory
+                                    .fromAssetWithDpi("Icon_line_node.png")));
+
+                }
+            }
+        }
+
+        if (mRouteLine.getStarting() != null) {
+            overlayOptionses.add((new MarkerOptions())
+                    .position(mRouteLine.getStarting().getLocation())
+                    .icon(getStartMarker() != null ? getStartMarker() :
+                            BitmapDescriptorFactory
+                                    .fromAssetWithDpi("Icon_start.png")).zIndex(10));
+        }
+        if (mRouteLine.getTerminal() != null) {
+            overlayOptionses
+                    .add((new MarkerOptions())
+                            .position(mRouteLine.getTerminal().getLocation())
+                            .icon(getTerminalMarker() != null ? getTerminalMarker() :
+                                    BitmapDescriptorFactory
+                                            .fromAssetWithDpi("Icon_end.png"))
+                            .zIndex(10));
+        }
+        // poly line
+        if (mRouteLine.getAllStep() != null
+                && mRouteLine.getAllStep().size() > 0) {
+
+            List<DrivingStep> steps = mRouteLine.getAllStep();
+            int stepNum = steps.size();
+
+
+            List<LatLng> points = new ArrayList<LatLng>();
+            ArrayList<Integer> traffics = new ArrayList<Integer>();
+            int totalTraffic = 0;
+            for (int i = 0; i < stepNum ; i++) {
+                if (i == stepNum - 1) {
+                    points.addAll(steps.get(i).getWayPoints());
+                } else {
+                    points.addAll(steps.get(i).getWayPoints().subList(0, steps.get(i).getWayPoints().size() - 1));
+                }
+
+                totalTraffic += steps.get(i).getWayPoints().size() - 1;
+                if (steps.get(i).getTrafficList() != null && steps.get(i).getTrafficList().length > 0) {
+                    for (int j = 0;j < steps.get(i).getTrafficList().length;j++) {
+                        traffics.add(steps.get(i).getTrafficList()[j]);
+                    }
+                }
+            }
+
+//            Bundle indexList = new Bundle();
+//            if (traffics.size() > 0) {
+//                int raffic[] = new int[traffics.size()];
+//                int index = 0;
+//                for (Integer tempTraff : traffics) {
+//                    raffic[index] = tempTraff.intValue();
+//                    index++;
+//                }
+//                indexList.putIntArray("indexs", raffic);
+//            }
+            boolean isDotLine = false;
+
+            if (traffics != null && traffics.size() > 0) {
+                isDotLine = true;
+            }
+            PolylineOptions option = new PolylineOptions().points(points).textureIndex(traffics)
+                    .width(7).dottedLine(isDotLine).focus(true)
+                    .color(getLineColor() != 0 ? getLineColor() : Color.argb(178, 0, 78, 255)).zIndex(0);
+            if (isDotLine) {
+                option.customTextureList(getCustomTextureList());
+            }
+            overlayOptionses.add(option);
+        }
+        return overlayOptionses;
     }
 
-    public void setData(DrivingRouteLine var1) {
-        this.c = var1;
+    /**
+     * 设置路线数据
+     *
+     * @param routeLine
+     *            路线数据
+     */
+    public void setData(DrivingRouteLine routeLine) {
+        this.mRouteLine = routeLine;
     }
 
+    /**
+     * 覆写此方法以改变默认起点图标
+     *
+     * @return 起点图标
+     */
     public BitmapDescriptor getStartMarker() {
         return null;
     }
 
+    /**
+     * 覆写此方法以改变默认绘制颜色
+     * @return 线颜色
+     */
+    public int getLineColor() {
+        return 0;
+    }
+    public List<BitmapDescriptor> getCustomTextureList() {
+        ArrayList<BitmapDescriptor> list = new ArrayList<BitmapDescriptor>();
+        list.add(BitmapDescriptorFactory.fromAsset("Icon_road_blue_arrow.png"));
+        list.add(BitmapDescriptorFactory.fromAsset("Icon_road_green_arrow.png"));
+        list.add(BitmapDescriptorFactory.fromAsset("Icon_road_yellow_arrow.png"));
+        list.add(BitmapDescriptorFactory.fromAsset("Icon_road_red_arrow.png"));
+        list.add(BitmapDescriptorFactory.fromAsset("Icon_road_nofocus.png"));
+        return list;
+    }
+    /**
+     * 覆写此方法以改变默认终点图标
+     *
+     * @return 终点图标
+     */
     public BitmapDescriptor getTerminalMarker() {
         return null;
     }
 
-    public boolean onRouteNodeClick(int var1) {
-        if(this.c.getAllStep() != null && this.c.getAllStep().get(var1) != null) {
-//            Toast.makeText(a.a().e(), ((DrivingStep)this.c.getAllStep().get(var1)).getInstructions(), 1).show();
+    /**
+     * 覆写此方法以改变默认点击处理
+     *
+     * @param i
+     *            线路节点的 index
+     * @return 是否处理了该点击事件
+     */
+    public boolean onRouteNodeClick(int i) {
+        if (mRouteLine.getAllStep() != null
+                && mRouteLine.getAllStep().get(i) != null) {
+            Log.i("baidumapsdk", "DrivingRouteOverlay onRouteNodeClick");
         }
-
         return false;
     }
 
-    public final boolean onMarkerClick(Marker var1) {
-        if(var1.getExtraInfo() != null) {
-            this.onRouteNodeClick(var1.getExtraInfo().getInt("index"));
+    @Override
+    public final boolean onMarkerClick(Marker marker) {
+        for (Overlay mMarker : mOverlayList) {
+            if (mMarker instanceof Marker && mMarker.equals(marker)) {
+                if (marker.getExtraInfo() != null) {
+                    onRouteNodeClick(marker.getExtraInfo().getInt("index"));
+                }
+            }
         }
-
         return true;
     }
 
+    @Override
+    public boolean onPolylineClick(Polyline polyline) {
+        boolean flag = false;
+        for (Overlay mPolyline : mOverlayList) {
+            if (mPolyline instanceof Polyline && mPolyline.equals(polyline)) {
+                // 选中
+                flag = true;
+                break;
+            }
+        }
+        setFocus(flag);
+        return true;
+    }
 
+    public void setFocus(boolean flag) {
+        focus = flag;
+        for (Overlay mPolyline : mOverlayList) {
+            if (mPolyline instanceof Polyline) {
+                // 选中
+                ((Polyline) mPolyline).setFocus(flag);
+
+                break;
+            }
+        }
+
+    }
 }

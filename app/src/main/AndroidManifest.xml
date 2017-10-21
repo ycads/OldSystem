@@ -96,7 +96,8 @@
         <activity android:name=".health.HeartRateActivity" />
         <activity android:name=".health.MemoInfoActivity" />
         <activity android:name=".health.SleepCountActivity" />
-        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".MainActivity" />
+        <activity android:name=".location.PathGuideActivity"></activity>
     </application>
 
 </manifest>
