@@ -27,10 +27,7 @@
     <uses-permission android:name="android.permission.WRITE_SETTINGS" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
 
-    <service
-        android:name="com.baidu.location.f"
-        android:enabled="true"
-        android:process=":remote" />
+
 
     <application
         android:name="org.litepal.LitePalApplication"
@@ -87,6 +84,11 @@
                 <action android:name="android.intent.action.ACTION_POWER_DISCONNECTED" />
             </intent-filter>
         </service>
+
+        <!--<service-->
+            <!--android:name="com.baidu.location.f"-->
+            <!--android:enabled="true"-->
+            <!--android:process=":remote" />-->
 
         <activity android:name=".health.MemoActivity" />
         <activity android:name=".tool.FlashLightActivity" />
