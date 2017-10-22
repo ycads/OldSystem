@@ -10,7 +10,7 @@
 **2. 进入系统后，可以左右滑动，查看整体模块界面，分别是一键求救页面、位置服务页面、健康监测页面和智能工具页面。**
 
 ![15_](https://user-images.githubusercontent.com/18030737/31764001-8ea33a80-b4f2-11e7-9f0e-d187c5c65c69.jpg)
-![16_](https://user-images.githubusercontent.com/18030737/31764002-8ed52f5e-b4f2-11e7-9354-977957b1cbed.jpg)
+![29_](https://user-images.githubusercontent.com/18030737/31851559-b2c4f062-b69a-11e7-9f40-3832e2f3bb69.jpg)
 ![17_](https://user-images.githubusercontent.com/18030737/31764009-8f2e61b4-b4f2-11e7-8543-fe708ba20391.jpg)
 ![18_](https://user-images.githubusercontent.com/18030737/31764011-8f60bc54-b4f2-11e7-82a0-f3842c774209.jpg)
 
@@ -48,7 +48,12 @@
 
 **8.点击位置服务路线导航按钮，首先自动定位出用户当前位置，并默认设定为起点，用户此时点击地图中某一地点，系统自动解析出具体位置，设定为目的地，最后点击搜索路线按钮，即可出现具体路线规划。**
 
-![06](https://user-images.githubusercontent.com/18030737/31764505-f65887f6-b4f3-11e7-915a-29a2021b3b9e.gif)
+![16](https://user-images.githubusercontent.com/18030737/31852432-2cd742e2-b6aa-11e7-8ed0-7cd0d71719c5.gif)
+
+**线路规划功能调用百度地图APP实现，即用户界面把自己当前定位和预定到达目的地传递给百度地图APP客户端，直接实现线路规划。（PS：本项目选择的功能为自己实现方式，不过具体实现代码在上述功能模块中有写）**
+
+![17](https://user-images.githubusercontent.com/18030737/31852442-429dd186-b6aa-11e7-8b5b-7646fc62fc73.gif)
+
 
 
 
@@ -57,6 +62,8 @@
 **9.点击位置服务天气查询按钮，首先用户需要选择当前具体所在地省、市、县的具体信息，选择完毕后，即可查看所在地一周之内的天气信息，如果要变更地点，可以点击界面左上角按钮，进行地点信息变换。**
 
 ![07](https://user-images.githubusercontent.com/18030737/31764404-a638c718-b4f3-11e7-91ef-12e8049d88b2.gif)
+
+
 
 
 
